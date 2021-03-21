@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <img src="FitnessAI.png" width=200 height=200></img>
+    <h3>Welcome to FitnessAI! Select an exercise below</h3>
+    <a href="selectgoal.html"><button>Back</button></a>
+    <a href="situps.html" id="situpslink"><button>Sit-Ups</button></a>
+    <a href="squats.html" id="squatslink"><button>Squats</button></a>
+    <a href="pushups.html" id="pushupslink"><button>Push-Ups</button></a>
+    <p id=repshow>Goal: 10</p>
+    <script type=text/javascript>
+    function main() {
+        let parameters = new URLSearchParams(window.location.search);
+        let goal = parameters.get("goal");
+        console.log(goal)
+        document.getElementById("repshow").innerHTML = "Goal: "+goal;
+        document.getElementById("situpslink").setAttribute("href", document.getElementById("situpslink").getAttribute("href") + "?goal="+goal);
+        document.getElementById("pushupslink").setAttribute("href", document.getElementById("pushupslink").getAttribute("href") + "?goal="+goal);
+        document.getElementById("squatslink").setAttribute("href", document.getElementById("squatslink").getAttribute("href") + "?goal="+goal);
+    }
+    window.onload=main();
+    </script>
+    <br>
+</html>
